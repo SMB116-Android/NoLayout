@@ -20,7 +20,7 @@ public class FinderActivity extends AppCompatActivity {
         test = findViewById(R.id.editTextTextPersonName);
         TitleToSearch = test.getText().toString();
         Full_Url = URL_JSON+TitleToSearch;
-        Intent i = new Intent(this, Details.class);
+        Intent i = new Intent(this, FinderResultActivity.class);
         i.putExtra("movie_title",Full_Url);
         Log.d("AUBO", "LAAAAAAAAAAA"+Full_Url);
         startActivity(i);
