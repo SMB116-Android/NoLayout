@@ -2,11 +2,14 @@ package com.example.smb116;
 
 import android.content.Intent;
 import android.icu.text.CaseMap;
+import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import java.util.ArrayList;
 
 public class FinderActivity extends AppCompatActivity {
 
@@ -14,6 +17,12 @@ public class FinderActivity extends AppCompatActivity {
     String TitleToSearch = "";
     String Full_Url;
     EditText test;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.finder);
+    }
 
     //searchByTitle
     public void searchByTitle(View view) {

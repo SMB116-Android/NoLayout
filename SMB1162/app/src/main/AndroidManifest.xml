@@ -20,6 +20,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".Details"></activity>
+        <activity android:name=".FinderActivity"></activity>
+        <activity android:name=".FinderResultActivity"></activity>
     </application>
 
 </manifest>

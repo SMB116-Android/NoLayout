@@ -5,9 +5,13 @@ import androidx.loader.content.AsyncTaskLoader;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.graphics.Movie;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -30,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
 
     List<MovieModelClass> movieList;
     RecyclerView recyclerView;
+    Button btnGoFinder;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,9 +43,20 @@ public class MainActivity extends AppCompatActivity {
 
         movieList = new ArrayList<>();
         recyclerView = findViewById(R.id.recyclerView);
+        btnGoFinder = findViewById(R.id.btnGoFinder);
 
         GetData getData = new GetData();
         getData.execute();
+    }
+
+    public void goToFinderActivity(View view) {
+        Intent i = new Intent(this, FinderActivity.class);
+        startActivity(i);
+    }
+
+    public void goToMainActivity(View view) {
+        Intent i = new Intent(this, MainActivity.class);
+        startActivity(i);
     }
 
     public class GetData extends AsyncTask<String, String, String> {
